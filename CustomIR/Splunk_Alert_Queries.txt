@@ -1,0 +1,15 @@
+
+SSH Brute Force:
+index=customIR sourcetype=csv | stats count by Src_IP, Dst_IP, Label | where Label="SSH-Patator"
+
+FTP Brute Force:
+index=customIR sourcetype=csv | stats count by Src_IP, Dst_IP, Label | where Label="FTP-Patator"
+
+DDoS Attack (LOIC):
+index=customIR sourcetype=csv | search Label="DDoS" | stats count by Dst_IP
+
+Heartbleed Attack:
+index=customIR sourcetype=csv | search Label="Heartbleed"
+
+Web Attack (XSS, SQLi):
+index=customIR sourcetype=csv | search Label="Web Attack"
